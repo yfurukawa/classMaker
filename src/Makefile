@@ -3,7 +3,7 @@ RM = rm -f
 INCLUDE = -I/usr/incude -I/usr/local/include -I../include
 LIB_DIR = -L/usr/lib64 -L/usr/local/lib64
 LIB = -lpthread
-OPT = -O0 -g3 -Wall -Wnon-virtual-dtor -Woverloaded-virtual -fmessage-length=0 -fprofile-arcs -ftest-coverage
+OPT = -O0 -g3 -Wall -Wnon-virtual-dtor -Woverloaded-virtual
 TARGET = classMaker
 include productionSources.mk
 
@@ -22,7 +22,7 @@ clean:
 TEST_TARGET = classMakerTest
 TEST_INCLUDE = -I../test -I.
 TEST_LIB = -lgtest
-TEST_OPT = -O0 -g3 -Wall -fmessage-length=0 -pg -fprofile-arcs -ftest-coverage
+TEST_OPT = -O0 -g3 -Wall -fmessage-length=0
 include testSources.mk
 include testObjects.mk
 
