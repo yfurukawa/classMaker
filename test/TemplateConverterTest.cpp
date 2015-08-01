@@ -23,8 +23,22 @@ void TemplateConverterTest::TearDown() {
 }
 
 TEST_F(TemplateConverterTest, DoNotNeedConvert_DueToNoTags) {
-	std::string targetString("class Hoge {");
+	std::string targetString("No Tag line");
 	std::string expectedString(targetString);
+
+	EXPECT_EQ(expectedString, sut->convert(targetString));
+}
+
+TEST_F(TemplateConverterTest, DoNotNeedConvert_includeLine) {
+	std::string targetString("#include <iostream>");
+	std::string expectedString(targetString);
+
+	EXPECT_EQ(expectedString, sut->convert(targetString));
+}
+
+TEST_F(TemplateConverterTest, Convert_ClassName) {
+	std::string targetString("class ${CLASS} {");
+	std::string expectedString("class Hoge {");
 
 	EXPECT_EQ(expectedString, sut->convert(targetString));
 }

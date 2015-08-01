@@ -15,8 +15,8 @@
 
 class IMakefileCreator {
 public:
-	IMakefileCreator(){};
-	virtual ~IMakefileCreator(){};
+	IMakefileCreator();
+	virtual ~IMakefileCreator();
 	virtual void setOutputter(IOutputter* outputter) = 0;
 	virtual void setInputter(IInputter* inputter) = 0;
 	virtual void createFiles(const std::string& sourceClasses, const std::string& sourceObjects,

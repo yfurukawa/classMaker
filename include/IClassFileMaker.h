@@ -17,9 +17,12 @@
 using namespace std;
 
 class IClassFileMaker {
+protected:
+//	IOutputter* outputter_;
+
 public:
-	IClassFileMaker(){};
-	virtual ~IClassFileMaker(){};
+	virtual ~IClassFileMaker();
+	IClassFileMaker();
 	virtual void createFiles() = 0;
 	virtual const std::string getClassName() const = 0;
 	virtual const std::string getName() const = 0;
