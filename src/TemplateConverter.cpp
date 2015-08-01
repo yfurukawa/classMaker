@@ -8,11 +8,11 @@
 #include "TemplateConverter.h"
 
 TemplateConverter::TemplateConverter() {
-	// TODO Auto-generated constructor stub
-
 }
 
 TemplateConverter::~TemplateConverter() {
-	// TODO Auto-generated destructor stub
 }
 
+std::string TemplateConverter::convert(std::string targetString) {
+	return targetString;
+}
