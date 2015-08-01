@@ -9,12 +9,9 @@
 #include "mocks/OutputterMock.h"
 
 TestClassFileMakerTest::TestClassFileMakerTest() : sut(NULL) {
-	// TODO
-
 }
 
 TestClassFileMakerTest::~TestClassFileMakerTest() {
-	// TODO Auto-generated destructor stub
 }
 
 void TestClassFileMakerTest::SetUp() {

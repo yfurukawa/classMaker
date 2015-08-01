@@ -10,8 +10,6 @@
 #include "CommandLineArgumentsParserTest.h"
 
 CommandLineArgumentsParserTest::CommandLineArgumentsParserTest() : sut(NULL) {
-	// TODO
-
 }
 
 void CommandLineArgumentsParserTest::SetUp() {
@@ -23,7 +21,6 @@ void CommandLineArgumentsParserTest::TearDown() {
 }
 
 CommandLineArgumentsParserTest::~CommandLineArgumentsParserTest() {
-	// TODO Auto-generated destructor stub
 }
 
 TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenArgumentsIsCommandOnly) {

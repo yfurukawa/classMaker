@@ -12,7 +12,6 @@
 #include "FileMakerList.h"
 
 ClassFileMakerFactoryTest::ClassFileMakerFactoryTest() : sut(NULL), mock(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
 	char* argv[] = {(char*)"command", (char*)"Hoge"};
 	mock = 	new CommandLineArgumentsParserMock();
 	mock->parseArguments(2, argv);
@@ -20,7 +19,6 @@ ClassFileMakerFactoryTest::ClassFileMakerFactoryTest() : sut(NULL), mock(NULL) {
 }
 
 ClassFileMakerFactoryTest::~ClassFileMakerFactoryTest() {
-	// TODO Auto-generated destructor stub
 	delete sut;
 	delete mock;
 }

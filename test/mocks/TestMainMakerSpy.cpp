@@ -8,12 +8,9 @@
 #include "TestMainMakerSpy.h"
 
 TestMainMakerSpy::TestMainMakerSpy() {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 TestMainMakerSpy::~TestMainMakerSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 const std::string TestMainMakerSpy::getCppSkeleton() const {

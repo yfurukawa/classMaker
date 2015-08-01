@@ -15,15 +15,12 @@
 using namespace std;
 
 ClassFileMaker::ClassFileMaker() : name_(""), className_(""), headerName_(""), objectName_(""), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL){
-	// TODO
-
 }
 
 ClassFileMaker::ClassFileMaker(std::string name) : name_(name), className_(name+".cpp"), headerName_(name+".h"), objectName_(name+".o"), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL) {
 }
 
 ClassFileMaker::~ClassFileMaker() {
-	// TODO Auto-generated destructor stub
 	if( outputter_ != NULL ){
 		delete outputter_;
 		outputter_ = NULL;

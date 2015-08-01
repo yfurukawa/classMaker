@@ -8,12 +8,9 @@
 #include "CommandLineArgumentsParser.h"
 #include <iostream>
 CommandLineArgumentsParser::CommandLineArgumentsParser() : language_("cpp"), targetName_("a.out"), needToCreateMakefile_(true) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 CommandLineArgumentsParser::~CommandLineArgumentsParser() {
-	// TODO Auto-generated destructor stub
 }
 
 void CommandLineArgumentsParser::parseArguments(int argc, char** argv) throw (std::invalid_argument){

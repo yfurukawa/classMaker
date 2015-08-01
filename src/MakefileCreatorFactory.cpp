@@ -19,7 +19,6 @@ MakefileCreatorFactory::MakefileCreatorFactory(CommandLineArgumentsParser* parse
 }
 
 MakefileCreatorFactory::~MakefileCreatorFactory() {
-	// TODO Auto-generated destructor stub
 }
 
 IMakefileCreator* MakefileCreatorFactory::createMakefileCreator() {

@@ -8,12 +8,9 @@
 #include "SubMakefileCreatorSpy.h"
 
 SubMakefileCreatorSpy::SubMakefileCreatorSpy() {
-	// TODO 自動生成されたコンストラクター・スタブ
-
 }
 
 SubMakefileCreatorSpy::~SubMakefileCreatorSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 const IOutputter* SubMakefileCreatorSpy::getOutputter() const {

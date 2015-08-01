@@ -11,12 +11,9 @@
 #include "IMakefileCreator.h"
 
 MakefileCreatorFactoryTest::MakefileCreatorFactoryTest() : sut(NULL), mock(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 MakefileCreatorFactoryTest::~MakefileCreatorFactoryTest() {
-	// TODO Auto-generated destructor stub
 	delete sut;
 	delete mock;
 }

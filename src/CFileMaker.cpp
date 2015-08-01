@@ -12,15 +12,12 @@
 #include "CFileMaker.h"
 
 CFileMaker::CFileMaker() : name_(""), moduleName_(""), headerName_(""), objectName_(""), headerSkeleton_(""), cSkeleton_(""), outputter_(NULL) {
-	// TODO
-
 }
 
 CFileMaker::CFileMaker(std::string name) : name_(name), moduleName_(name+".c"), headerName_(name+".h"), objectName_(name+".o"), headerSkeleton_(""), cSkeleton_(""), outputter_(NULL) {
 }
 
 CFileMaker::~CFileMaker() {
-	// TODO Auto-generated destructor stub
 	if( outputter_ != NULL ){
 		delete outputter_;
 		outputter_ = NULL;

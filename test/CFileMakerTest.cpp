@@ -10,12 +10,9 @@
 #include "mocks/OutputterMock.h"
 
 CFileMakerTest::CFileMakerTest() : sut(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 CFileMakerTest::~CFileMakerTest() {
-	// TODO Auto-generated destructor stub
 }
 
 

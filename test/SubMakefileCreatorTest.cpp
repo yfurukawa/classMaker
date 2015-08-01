@@ -10,12 +10,10 @@
 #include "mocks/OutputterMock.h"
 
 SubMakefileCreatorTest::SubMakefileCreatorTest() {
-	// TODO 自動生成されたコンストラクター・スタブ
 	sut = new SubMakefileCreatorSpy();
 }
 
 SubMakefileCreatorTest::~SubMakefileCreatorTest() {
-	// TODO Auto-generated destructor stub
 	delete sut;
 }
 

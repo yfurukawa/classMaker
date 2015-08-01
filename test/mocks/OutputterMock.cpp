@@ -8,12 +8,9 @@
 #include "OutputterMock.h"
 
 OutputterMock::OutputterMock() : name_("outputterMock"), numberOfCall_(0), isExsist_(false) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 OutputterMock::~OutputterMock() {
-	// TODO Auto-generated destructor stub
 }
 
 void OutputterMock::outputContents(std::string outputName,

@@ -11,8 +11,6 @@
 #include "IOutputter.h"
 
 ClassFileMakerTest::ClassFileMakerTest() : sut(NULL){
-	// TODO
-
 }
 
 void ClassFileMakerTest::SetUp() {
@@ -24,7 +22,6 @@ void ClassFileMakerTest::TearDown() {
 }
 
 ClassFileMakerTest::~ClassFileMakerTest() {
-	// TODO Auto-generated destructor stub
 }
 
 TEST_F(ClassFileMakerTest, createInstance) {

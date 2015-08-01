@@ -13,7 +13,6 @@ FileDAO::FileDAO() {
 }
 
 FileDAO::~FileDAO() {
-	// TODO Auto-generated destructor stub
 }
 
 void FileDAO::outputContents(std::string outputName, std::string contents) {

@@ -13,7 +13,6 @@ SubMakefileCreator::SubMakefileCreator() : outputter_(NULL), inputter_(NULL) {
 }
 
 SubMakefileCreator::~SubMakefileCreator() {
-	// TODO Auto-generated destructor stub
 }
 
 void SubMakefileCreator::setOutputter(IOutputter* outputter) {

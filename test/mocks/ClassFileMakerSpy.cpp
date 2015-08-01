@@ -8,8 +8,6 @@
 #include "ClassFileMakerSpy.h"
 
 ClassFileMakerSpy::ClassFileMakerSpy() {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 ClassFileMakerSpy::ClassFileMakerSpy(std::string name) : ClassFileMaker(name) {
@@ -17,7 +15,6 @@ ClassFileMakerSpy::ClassFileMakerSpy(std::string name) : ClassFileMaker(name) {
 }
 
 ClassFileMakerSpy::~ClassFileMakerSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 const std::string ClassFileMakerSpy::getHeaderName() const {

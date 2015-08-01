@@ -8,15 +8,12 @@
 #include "TestClassFileMaker.h"
 
 TestClassFileMaker::TestClassFileMaker() : name_(""), testTargetClassName_(""), className_(""), headerName_(""), objectName_(""), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL) {
-	// TODO
-
 }
 
 TestClassFileMaker::TestClassFileMaker(std::string name) : name_(name+"Test"), testTargetClassName_(name), className_(name+"Test.cpp"), headerName_(name+"Test.h"), objectName_(name+"Test.o"), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL) {
 }
 
 TestClassFileMaker::~TestClassFileMaker() {
-	// TODO Auto-generated destructor stub
 	if( outputter_ != NULL ){
 		delete outputter_;
 		outputter_ = NULL;

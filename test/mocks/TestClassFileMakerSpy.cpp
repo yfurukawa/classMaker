@@ -8,16 +8,12 @@
 #include "TestClassFileMakerSpy.h"
 
 TestClassFileMakerSpy::TestClassFileMakerSpy() {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 TestClassFileMakerSpy::TestClassFileMakerSpy(std::string name) : TestClassFileMaker(name) {
-
 }
 
 TestClassFileMakerSpy::~TestClassFileMakerSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 const std::string TestClassFileMakerSpy::getHeaderName() const {

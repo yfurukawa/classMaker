@@ -15,12 +15,9 @@
 #include "FileMakerList.h"
 
 ClassFileMakerFactory::ClassFileMakerFactory() : parser_(NULL) {
-	// TODO
-
 }
 
 ClassFileMakerFactory::~ClassFileMakerFactory() {
-	// TODO Auto-generated destructor stub
 }
 
 ClassFileMakerFactory::ClassFileMakerFactory(CommandLineArgumentsParser* parser) : parser_(parser) {

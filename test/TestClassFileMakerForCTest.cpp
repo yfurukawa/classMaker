@@ -11,8 +11,6 @@
 #include "mocks/OutputterMock.h"
 
 TestClassFileMakerForCTest::TestClassFileMakerForCTest() : sut(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 void TestClassFileMakerForCTest::SetUp() {
@@ -23,7 +21,6 @@ void TestClassFileMakerForCTest::TearDown() {
 }
 
 TestClassFileMakerForCTest::~TestClassFileMakerForCTest() {
-	// TODO Auto-generated destructor stub
 }
 
 TEST_F(TestClassFileMakerForCTest, createInstance) {

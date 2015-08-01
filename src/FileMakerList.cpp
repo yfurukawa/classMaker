@@ -9,12 +9,9 @@
 #include "ClassFileMaker.h"
 
 FileMakerList::FileMakerList() {
-	// TODO
-
 }
 
 FileMakerList::~FileMakerList() {
-	// TODO Auto-generated destructor stub
 	destroyClassList();
 	destroyTestClassList();
 }

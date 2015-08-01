@@ -12,12 +12,9 @@
 #include "mocks/ClassFileMakerMock.h"
 
 FileMakerListTest::FileMakerListTest() : sut(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 FileMakerListTest::~FileMakerListTest() {
-	// TODO Auto-generated destructor stub
 }
 
 void FileMakerListTest::SetUp() {

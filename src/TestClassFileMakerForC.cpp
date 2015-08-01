@@ -8,15 +8,12 @@
 #include "TestClassFileMakerForC.h"
 
 TestClassFileMakerForC::TestClassFileMakerForC() : name_(""), testTargetClassName_(""), moduleName_(""), headerName_(""), objectName_(""), headerSkeleton_(""), cSkeleton_(""), outputter_(NULL)  {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 TestClassFileMakerForC::TestClassFileMakerForC(std::string name) : name_(name+"Test"), testTargetClassName_(name), moduleName_(name+"Test.cpp"), headerName_(name+"Test.h"), objectName_(name+"Test.o"), headerSkeleton_(""), cSkeleton_(""), outputter_(NULL) {
 }
 
 TestClassFileMakerForC::~TestClassFileMakerForC() {
-	// TODO Auto-generated destructor stub
 	if( outputter_ != NULL ){
 		delete outputter_;
 		outputter_ = NULL;

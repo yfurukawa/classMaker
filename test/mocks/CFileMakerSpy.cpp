@@ -8,12 +8,9 @@
 #include "CFileMakerSpy.h"
 
 CFileMakerSpy::CFileMakerSpy() {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 CFileMakerSpy::~CFileMakerSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 CFileMakerSpy::CFileMakerSpy(std::string name) : CFileMaker(name) {

@@ -8,12 +8,9 @@
 #include "TestMainMaker.h"
 
 TestMainMaker::TestMainMaker() : name_("testMain"), className_("testMain.cpp"), cppSkeleton_(""), outputter_(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 TestMainMaker::~TestMainMaker() {
-	// TODO Auto-generated destructor stub
 	if( outputter_ != NULL ){
 		delete outputter_;
 		outputter_ = NULL;

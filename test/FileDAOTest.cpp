@@ -14,7 +14,6 @@ FileDAOTest::FileDAOTest() : sut(NULL) {
 }
 
 FileDAOTest::~FileDAOTest() {
-	// TODO Auto-generated destructor stub
 }
 
 void FileDAOTest::SetUp() {

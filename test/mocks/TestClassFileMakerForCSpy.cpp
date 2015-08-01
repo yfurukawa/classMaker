@@ -8,12 +8,9 @@
 #include "TestClassFileMakerForCSpy.h"
 
 TestClassFileMakerForCSpy::TestClassFileMakerForCSpy() {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 TestClassFileMakerForCSpy::~TestClassFileMakerForCSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 TestClassFileMakerForCSpy::TestClassFileMakerForCSpy(std::string name) : TestClassFileMakerForC(name) {

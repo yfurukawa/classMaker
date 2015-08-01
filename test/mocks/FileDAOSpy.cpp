@@ -8,12 +8,9 @@
 #include "FileDAOSpy.h"
 
 FileDAOSpy::FileDAOSpy(){
-	// TODO 自動生成されたコンストラクター・スタブ
-
 }
 
 FileDAOSpy::~FileDAOSpy(){
-	// TODO Auto-generated destructor stub
 }
 
 bool FileDAOSpy::isClosedInputStream(){

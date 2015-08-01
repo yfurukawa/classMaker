@@ -10,12 +10,10 @@
 #include "IOutputter.h"
 
 TestMainMakerTest::TestMainMakerTest() : sut(NULL) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
 	sut = new TestMainMakerSpy();
 }
 
 TestMainMakerTest::~TestMainMakerTest() {
-	// TODO Auto-generated destructor stub
 }
 
 TEST_F(TestMainMakerTest, createInstance) {

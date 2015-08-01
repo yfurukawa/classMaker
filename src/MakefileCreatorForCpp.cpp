@@ -16,7 +16,6 @@ MakefileCreatorForCpp::MakefileCreatorForCpp( std::string name ) : outputter_(NU
 }
 
 MakefileCreatorForCpp::~MakefileCreatorForCpp() {
-  // TODO Auto-generated destructor stub
   if( outputter_ != NULL ){
     delete outputter_;
     outputter_ = NULL;

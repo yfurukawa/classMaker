@@ -8,11 +8,9 @@
 #include "MakefileCreatorForC.h"
 
 MakefileCreatorForC::MakefileCreatorForC()  : outputter_(NULL), inputter_(NULL), targetName_(""), targetNameForTest_("") {
-
 }
 
 MakefileCreatorForC::~MakefileCreatorForC() {
-  // TODO Auto-generated destructor stub
   if( outputter_ != NULL ){
     delete outputter_;
     outputter_ = NULL;

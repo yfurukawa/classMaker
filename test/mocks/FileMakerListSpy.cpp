@@ -8,12 +8,9 @@
 #include "FileMakerListSpy.h"
 
 FileMakerListSpy::FileMakerListSpy() : numberOfCall_(0) {
-	// TODO �����������ꂽ�R���X�g���N�^�[�E�X�^�u
-
 }
 
 FileMakerListSpy::~FileMakerListSpy() {
-	// TODO Auto-generated destructor stub
 }
 
 IClassFileMaker* FileMakerListSpy::getClassFileMaker() {
