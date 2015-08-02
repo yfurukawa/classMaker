@@ -39,37 +39,37 @@ TEST_F(ClassFileMakerFromTemplateTest, createObjectFileName) {
 	EXPECT_EQ("Hoge.o", sut->getObjectName());
 }
 
-TEST_F(ClassFileMakerFromTemplateTest, createHeaderFile) {
-	std::string expected = createExpectedHeader("Hoge");
-	sut->createFiles();
-
-	EXPECT_EQ(expected, sut->getHeaderSkeleton());
-}
-
-TEST_F(ClassFileMakerFromTemplateTest, createHeaderFile_Fuga) {
-	std::string expected = createExpectedHeader("Fuga");
-	delete sut;
-	sut = new ClassFileMakerFromTemplateSpy("Fuga");
-	sut->createFiles();
-
-	EXPECT_EQ(expected, sut->getHeaderSkeleton());
-}
-
-TEST_F(ClassFileMakerFromTemplateTest, createCppFile) {
-	std::string expected = "/*\n * Copyright\n *\n*/\n#include \"./Hoge.h\"\n\nHoge::Hoge() {\n}\n\nHoge::~Hoge() {\n}\n";
-	sut->createFiles();
-
-	EXPECT_EQ(expected, sut->getCppSkeleton());
-}
-
-TEST_F(ClassFileMakerFromTemplateTest, createCppFile_Fuga) {
-	std::string expected = "/*\n * Copyright\n *\n*/\n#include \"./Fuga.h\"\n\nFuga::Fuga() {\n}\n\nFuga::~Fuga() {\n}\n";
-	delete sut;
-	sut = new ClassFileMakerFromTemplateSpy("Fuga");
-	sut->createFiles();
-
-	EXPECT_EQ(expected, sut->getCppSkeleton());
-}
+//TEST_F(ClassFileMakerFromTemplateTest, createHeaderFile) {
+//	std::string expected = createExpectedHeader("Hoge");
+//	sut->createFiles();
+//
+//	EXPECT_EQ(expected, sut->getHeaderSkeleton());
+//}
+//
+//TEST_F(ClassFileMakerFromTemplateTest, createHeaderFile_Fuga) {
+//	std::string expected = createExpectedHeader("Fuga");
+//	delete sut;
+//	sut = new ClassFileMakerFromTemplateSpy("Fuga");
+//	sut->createFiles();
+//
+//	EXPECT_EQ(expected, sut->getHeaderSkeleton());
+//}
+//
+//TEST_F(ClassFileMakerFromTemplateTest, createCppFile) {
+//	std::string expected = "/*\n * Copyright\n *\n*/\n#include \"./Hoge.h\"\n\nHoge::Hoge() {\n}\n\nHoge::~Hoge() {\n}\n";
+//	sut->createFiles();
+//
+//	EXPECT_EQ(expected, sut->getCppSkeleton());
+//}
+//
+//TEST_F(ClassFileMakerFromTemplateTest, createCppFile_Fuga) {
+//	std::string expected = "/*\n * Copyright\n *\n*/\n#include \"./Fuga.h\"\n\nFuga::Fuga() {\n}\n\nFuga::~Fuga() {\n}\n";
+//	delete sut;
+//	sut = new ClassFileMakerFromTemplateSpy("Fuga");
+//	sut->createFiles();
+//
+//	EXPECT_EQ(expected, sut->getCppSkeleton());
+//}
 
 TEST_F(ClassFileMakerFromTemplateTest, setOutputter) {
 	IOutputter* outputter = new OutputterMock();
@@ -78,21 +78,21 @@ TEST_F(ClassFileMakerFromTemplateTest, setOutputter) {
 	EXPECT_EQ(outputter, sut->getOutputter());
 }
 
-TEST_F(ClassFileMakerFromTemplateTest, outputContents) {
-	std::string expectedHeaderContents = createExpectedHeader("Hoge");
-	std::string expectedCppContents = "/*\n * Copyright\n *\n*/\n#include \"./Hoge.h\"\n\nHoge::Hoge() {\n}\n\nHoge::~Hoge() {\n}\n";
-	OutputterMock* outputterMock = new OutputterMock();
-	IOutputter* outputter = outputterMock;
-	sut->setOutputter( outputter );
-	sut->createFiles();
-
-	EXPECT_EQ(2, outputterMock->getNumberOfCall());
-	EXPECT_EQ("src/Hoge.h", outputterMock->getOutputName(0));
-	EXPECT_EQ(expectedHeaderContents, outputterMock->getContents(0));
-	EXPECT_EQ("src/Hoge.cpp", outputterMock->getOutputName(1));
-	EXPECT_EQ(expectedCppContents, outputterMock->getContents(1));
-
-}
+//TEST_F(ClassFileMakerFromTemplateTest, outputContents) {
+//	std::string expectedHeaderContents = createExpectedHeader("Hoge");
+//	std::string expectedCppContents = "/*\n * Copyright\n *\n*/\n#include \"./Hoge.h\"\n\nHoge::Hoge() {\n}\n\nHoge::~Hoge() {\n}\n";
+//	OutputterMock* outputterMock = new OutputterMock();
+//	IOutputter* outputter = outputterMock;
+//	sut->setOutputter( outputter );
+//	sut->createFiles();
+//
+//	EXPECT_EQ(2, outputterMock->getNumberOfCall());
+//	EXPECT_EQ("src/Hoge.h", outputterMock->getOutputName(0));
+//	EXPECT_EQ(expectedHeaderContents, outputterMock->getContents(0));
+//	EXPECT_EQ("src/Hoge.cpp", outputterMock->getOutputName(1));
+//	EXPECT_EQ(expectedCppContents, outputterMock->getContents(1));
+//
+//}
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 std::string ClassFileMakerFromTemplateTest::createExpectedHeader( std::string className ){

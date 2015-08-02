@@ -10,6 +10,7 @@
 
 #include <string>
 #include "IClassFileMaker.h"
+#include "TemplateConverter.h"
 
 class IOutputter;
 
@@ -44,7 +45,7 @@ public:
 
 protected:
 	const std::string name_; //!< コンストラクタ引数で渡されたクラス名
-	const std::string className_; //!< ソースファイル名
+	const std::string classFilename_; //!< ソースファイル名
 	const std::string headerName_; //!< ヘッダファイル名
 	const std::string objectName_; //!< オブジェクトファイル名（*.o）
 	std::string headerSkeleton_; //!< ヘッダファイルのスケルトンコンテンツ
@@ -65,6 +66,8 @@ private:
 	 * \return出力用オブジェクトの有無　（true：保持　false:未保持）
 	 */
 	bool isOutputterSet();
+	//! テンプレートのタブを変換するコンバータ
+	TemplateConverter* converter;
 };
 
 #endif /* SRC_CLASSFILEMAKERFROMTEMPLATE_H_ */

@@ -11,7 +11,6 @@ ClassFileMakerFromTemplateSpy::ClassFileMakerFromTemplateSpy() {
 }
 
 ClassFileMakerFromTemplateSpy::ClassFileMakerFromTemplateSpy(std::string name) : ClassFileMakerFromTemplate(name) {
-
 }
 
 ClassFileMakerFromTemplateSpy::~ClassFileMakerFromTemplateSpy() {
