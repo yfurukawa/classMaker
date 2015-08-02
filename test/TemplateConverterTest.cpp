@@ -15,7 +15,7 @@ TemplateConverterTest::~TemplateConverterTest() {
 }
 
 void TemplateConverterTest::SetUp() {
-	sut = new TemplateConverter();
+	sut = new TemplateConverter("Hoge");
 }
 
 void TemplateConverterTest::TearDown() {
@@ -37,8 +37,29 @@ TEST_F(TemplateConverterTest, DoNotNeedConvert_includeLine) {
 }
 
 TEST_F(TemplateConverterTest, Convert_ClassName) {
-	std::string targetString("class ${CLASS} {");
+	std::string targetString("class #{CLASS} {");
 	std::string expectedString("class Hoge {");
+
+	EXPECT_EQ(expectedString, sut->convert(targetString));
+}
+
+TEST_F(TemplateConverterTest, Convert_ConstructorDefinition_usingTAB) {
+	std::string targetString("	#{CLASS}();");
+	std::string expectedString("	Hoge();");
+
+	EXPECT_EQ(expectedString, sut->convert(targetString));
+}
+
+TEST_F(TemplateConverterTest, Convert_ConstructorDefinition_usingSpace) {
+	std::string targetString("    #{CLASS}();");
+	std::string expectedString("    Hoge();");
+
+	EXPECT_EQ(expectedString, sut->convert(targetString));
+}
+
+TEST_F(TemplateConverterTest, Convert_Constructor) {
+	std::string targetString("#{CLASS}::#{CLASS}(){");
+	std::string expectedString("Hoge::Hoge(){");
 
 	EXPECT_EQ(expectedString, sut->convert(targetString));
 }

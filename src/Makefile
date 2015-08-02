@@ -4,7 +4,7 @@ CP = cp
 INCLUDE = -I/usr/incude -I/usr/local/include -I../include
 LIB_DIR = -L/usr/lib -L/usr/local/lib -L/usr/lib64 -L/usr/local/lib64
 INSTALL_DIR = /usr/local/bin
-LIB = -lpthread
+LIB = -lpthread -lboost_regex
 OPT = -O0 -g3 -Wall -Wnon-virtual-dtor -Woverloaded-virtual
 TARGET = classMaker
 include productionSources.mk

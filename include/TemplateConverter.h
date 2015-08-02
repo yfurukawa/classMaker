@@ -12,9 +12,23 @@
 
 class TemplateConverter {
 public:
-	TemplateConverter();
+	//! コンストラクタ
+	/*!
+	 * \param className 変換するクラス名
+	 */
+	explicit TemplateConverter(std::string className);
+	//! デストラクタ
 	virtual ~TemplateConverter();
-	std::string convert(std::string targetString);
+	//! 与えられた文字列の中のタグを変換する
+	/*!
+	 * \param targetString 変換対象の文字列
+	 * \return 変換後の文字列
+	 */
+	std::string convert(const std::string targetString);
+
+private:
+	TemplateConverter();
+	std::string className_; //!< 変換するクラス名
 };
 
 #endif /* SRC_TEMPLATECONVERTER_H_ */
