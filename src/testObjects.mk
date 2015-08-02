@@ -3,4 +3,4 @@ TestClassFileMakerSpy.o CommandLineArgumentsParserTest.o FileMakerListTest.o Fil
 MakefileCreatorForCppTest.o MakefileCreatorForCppSpy.o TestMainMakerTest.o TestMainMakerSpy.o ClassFileMakerFactoryTest.o \
 CommandLineArgumentsParserMock.o MakefileCreatorFactoryTest.o CFileMakerTest.o CFileMakerSpy.o TestClassFileMakerForCTest.o \
 TestClassFileMakerForCSpy.o MakefileCreatorForCTest.o MakefileCreatorForCSpy.o SubMakefileCreatorTest.o SubMakefileCreatorSpy.o \
-FileDAOSpy.o TemplateConverterTest.o
+FileDAOSpy.o TemplateConverterTest.o ClassFileMakerFromTemplateTest.o ClassFileMakerFromTemplateSpy.o

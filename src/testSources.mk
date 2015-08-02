@@ -6,4 +6,5 @@ TEST_SRC = ../test/testMain.cpp ../test/ClassFileMakerTest.cpp ../test/mocks/Cla
 ../test/mocks/CommandLineArgumentsParserMock.cpp ../test/MakefileCreatorFactoryTest.cpp ../test/CFileMakerTest.cpp \
 ../test/mocks/CFileMakerSpy.cpp ../test/TestClassFileMakerForCTest.cpp ../test/mocks/TestClassFileMakerForCSpy.cpp \
 ../test/MakefileCreatorForCTest.cpp ../test/mocks/MakefileCreatorForCSpy.cpp ../test/SubMakefileCreatorTest.cpp \
-../test/mocks/SubMakefileCreatorSpy.cpp ../test/mocks/FileDAOSpy.cpp ../test/TemplateConverterTest.cpp
+../test/mocks/SubMakefileCreatorSpy.cpp ../test/mocks/FileDAOSpy.cpp ../test/TemplateConverterTest.cpp \
+../test/ClassFileMakerFromTemplateTest.cpp ../test/mocks/ClassFileMakerFromTemplateSpy.cpp ../test/ClassFileMakerFromTemplateTest.cpp
