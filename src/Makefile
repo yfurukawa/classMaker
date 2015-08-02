@@ -10,7 +10,7 @@ TARGET = classMaker
 include productionSources.mk
 
 all: $(SRC:.cpp=.o) main.o 
-	$(CC) $(INCLUDE) $(LIB_DIR) $(OPT) -o $(TARGET) $(SRC:.cpp=.o) main.o
+	$(CC) $(INCLUDE) $(LIB_DIR) $(OPT) $(LIB) -o $(TARGET) $(SRC:.cpp=.o) main.o
 
 $(SRC:.cpp=.o): $(SRC)
 	$(CC) $(INCLUDE) $(LIB_DIR) $(OPT) -c $(SRC)
