@@ -42,9 +42,9 @@ void SubMakefileCreator::createFiles(const std::string& sourceClasses,
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void SubMakefileCreator::appendClass( const std::string& appendNames, char* fileName ){
-	inputter_->openInputter( fileName );
-	outputter_->outputContents( fileName,
+void SubMakefileCreator::appendClass( const std::string& appendNames, std::string fileName ){
+	inputter_->openInputter( fileName.c_str() );
+	outputter_->outputContents( fileName.c_str(),
 			inputter_->readData() + " " + appendNames + "\n" );
 	inputter_->closeInputter();
 }

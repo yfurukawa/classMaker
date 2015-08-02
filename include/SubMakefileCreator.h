@@ -52,7 +52,7 @@ protected:
 	 * \param appendNames 追加するクラス名の一覧
 	 * \param fileName 追加対象のファイル名
 	 */
-	void appendClass( const std::string& appendNames, char* fileName );
+	void appendClass( const std::string& appendNames, std::string fileName );
 
 private:
 	//! Makefileのマクロとプロダクションクラスのソースファイルの一覧を生成する
