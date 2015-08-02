@@ -13,8 +13,9 @@
 
 ClassFileMakerFactoryTest::ClassFileMakerFactoryTest() : sut(NULL), mock(NULL) {
 	char* argv[] = {(char*)"command", (char*)"Hoge"};
+	int argc(2);
 	mock = 	new CommandLineArgumentsParserMock();
-	mock->parseArguments(2, argv);
+	mock->parseArguments(argc, argv);
 	sut = new ClassFileMakerFactory(mock);
 }
 
