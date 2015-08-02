@@ -10,9 +10,10 @@
 
 #include <string>
 #include "IClassFileMaker.h"
-#include "TemplateConverter.h"
 
 class IOutputter;
+class IInputter;
+class TemplateConverter;
 
 class ClassFileMakerFromTemplate : public IClassFileMaker {
 public:
@@ -51,10 +52,11 @@ protected:
 	std::string headerSkeleton_; //!< ヘッダファイルのスケルトンコンテンツ
 	std::string cppSkeleton_; //!< ソースファイルのスケルトンコンテンツ
 	IOutputter* outputter_; //!< 出力用オブジェクト
+	IInputter* inputter_; //!< テンプレートを読み込むFileDAO
+	TemplateConverter* converter_; //!< テンプレートのタブを変換するコンバータ
 
 	//! デフォルトコンストラクタ
 	ClassFileMakerFromTemplate();
-
 
 private:
 	//! ヘッダファイルのコンテンツを作成する
@@ -66,8 +68,6 @@ private:
 	 * \return出力用オブジェクトの有無　（true：保持　false:未保持）
 	 */
 	bool isOutputterSet();
-	//! テンプレートのタブを変換するコンバータ
-	TemplateConverter* converter;
 };
 
 #endif /* SRC_CLASSFILEMAKERFROMTEMPLATE_H_ */

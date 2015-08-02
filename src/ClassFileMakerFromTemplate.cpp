@@ -7,13 +7,17 @@
 
 #include "ClassFileMakerFromTemplate.h"
 #include "IOutputter.h"
+#include "FileDAO.h"
+#include "TemplateConverter.h"
 
 ClassFileMakerFromTemplate::ClassFileMakerFromTemplate(std::string name) : name_(name), classFilename_(name+".cpp"),
-			headerName_(name+".h"), objectName_(name+".o"), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL), converter(NULL) {
+			headerName_(name+".h"), objectName_(name+".o"), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL), inputter_(NULL),
+			converter_(NULL) {
+	converter_ = new TemplateConverter(name);
 }
 
 ClassFileMakerFromTemplate::ClassFileMakerFromTemplate() : name_(""), classFilename_(""), headerName_(""),
-			objectName_(""), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL), converter(NULL) {
+			objectName_(""), headerSkeleton_(""), cppSkeleton_(""), outputter_(NULL), inputter_(NULL), converter_(NULL) {
 }
 
 ClassFileMakerFromTemplate::~ClassFileMakerFromTemplate() {
@@ -24,6 +28,7 @@ ClassFileMakerFromTemplate::~ClassFileMakerFromTemplate() {
 }
 
 void ClassFileMakerFromTemplate::createFiles() {
+	converter_->convert("");
 }
 
 const std::string ClassFileMakerFromTemplate::getName() const {
