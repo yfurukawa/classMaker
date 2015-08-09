@@ -50,7 +50,7 @@ int Conductor::run(int argc, char* argv[]) {
 	catch(const std::invalid_argument& e) {
 		std::cerr << e.what();
 		std::cerr << std::endl;
-		std::cout << "Usage: prepareFiles [--lang=cpp | --lang=c] [--target=targetName] [--without_Makefile] className ..." << std::endl;
+		std::cout << "Usage: classMaker [--lang=cpp | --lang=c] [--target=targetName] [--without_Makefile] [--with_template] className ..." << std::endl;
 		return -1;
 	}
 	catch(...) {
