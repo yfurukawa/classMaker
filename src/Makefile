@@ -5,7 +5,7 @@ INCLUDE = -I/usr/incude -I/usr/local/include -I../include
 LIB_DIR = -L/usr/lib -L/usr/local/lib -L/usr/lib64 -L/usr/local/lib64
 INSTALL_DIR = /usr/local/bin
 LIB = -lpthread -lboost_regex
-OPT = -O0 -g3 -Wall -Wnon-virtual-dtor -Woverloaded-virtual
+OPT = -O0 -g3 -Wall -Wnon-virtual-dtor -Woverloaded-virtual --input-charset=UTF-8 --exec-charset=UTF-8
 TARGET = classMaker
 include productionSources.mk
 
@@ -29,7 +29,7 @@ install:
 TEST_TARGET = classMakerTest
 TEST_INCLUDE = -I../test -I.
 TEST_LIB = -lgtest
-TEST_OPT = -O0 -g3 -Wall
+TEST_OPT = -O0 -g3 -Wall --input-charset=UTF-8 --exec-charset=UTF-8
 include testSources.mk
 include testObjects.mk
 	

@@ -25,7 +25,7 @@ CommandLineArgumentsParserTest::~CommandLineArgumentsParserTest() {
 
 TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenArgumentsIsCommandOnly) {
 	int argc(1);
-	char* argv[] = {(char*)"prepareFiles"};
+	char* argv[] = {(char*)"classMaker"};
 
 	ASSERT_THROW(sut->parseArguments(argc, argv), std::invalid_argument);
 	try{
@@ -39,7 +39,7 @@ TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenArgumentsIsCommandOnly)
 
 TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenLanguageSettingIsDuplicated) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=cpp", (char*)"--lang=c"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=cpp", (char*)"--lang=c"};
 
 	ASSERT_THROW(sut->parseArguments(argc, argv), std::invalid_argument);
 	try{
@@ -53,7 +53,7 @@ TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenLanguageSettingIsDuplic
 
 TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenUnknownOptionsAreThere) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--unknownOption", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--unknownOption", (char*)"Hoge"};
 
 	ASSERT_THROW(sut->parseArguments(argc, argv), std::invalid_argument);
 	try{
@@ -67,7 +67,7 @@ TEST_F(CommandLineArgumentsParserTest, exceptionThrowWhenUnknownOptionsAreThere)
 
 TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenLanguageSettingIsNOTExsist) {
 	int argc(2);
-	char* argv[] = {(char*)"prepareFiles", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"Hoge"};
 
 	EXPECT_NO_THROW(sut->parseArguments(argc, argv));
 	try {
@@ -81,7 +81,7 @@ TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenLanguageSettingIsNOTE
 
 TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClassNameWithLanguageSettingOfCpp) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=cpp", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=cpp", (char*)"Hoge"};
 
 	EXPECT_NO_THROW(sut->parseArguments(argc, argv));
 	try {
@@ -95,21 +95,21 @@ TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClass
 
 TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClassNameWithLanguageSettingOfC) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=c", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=c", (char*)"Hoge"};
 
 	EXPECT_NO_THROW(sut->parseArguments(argc, argv));
 }
 
 TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClassNameWithTragetSetting) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"Hoge"};
 
 	EXPECT_NO_THROW(sut->parseArguments(argc, argv));
 }
 
 TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClassNameWithAppendOption) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--append", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--append", (char*)"Hoge"};
 
 	EXPECT_NO_THROW(sut->parseArguments(argc, argv));
 	try {
@@ -123,7 +123,7 @@ TEST_F(CommandLineArgumentsParserTest, noExceptionThrowWhenArgumentContainAClass
 
 TEST_F(CommandLineArgumentsParserTest, pickUpAClassNameFromArgument) {
 	int argc(3);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=cpp", (char*)"Hoge"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=cpp", (char*)"Hoge"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -134,7 +134,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpAClassNameFromArgument) {
 
 TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithLanguageSetting) {
 	int argc(5);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -147,7 +147,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithLangu
 
 TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithoutLanguageSetting) {
 	int argc(4);
-	char* argv[] = {(char*)"prepareFiles", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -160,7 +160,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithoutLa
 
 TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithTragetSetting) {
 	int argc(5);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -173,7 +173,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithTrage
 
 TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithLanguageAndTargetSetting) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=cpp", (char*)"--target=sampleTarget", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=cpp", (char*)"--target=sampleTarget", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -186,7 +186,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithLangu
 
 TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithTragetAndLanguageSetting) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 	sut->parseArguments(argc, argv);
 
 	std::vector<std::string> className;
@@ -199,7 +199,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpSomeClassNamesFromArgumentWithTrage
 
 TEST_F(CommandLineArgumentsParserTest, pickUpTargetLanguageCppFromArgument) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"--lang=cpp", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -208,7 +208,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpTargetLanguageCppFromArgument) {
 
 TEST_F(CommandLineArgumentsParserTest, pickUpTargetLanguageCFromArgument) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -217,7 +217,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpTargetLanguageCFromArgument) {
 
 TEST_F(CommandLineArgumentsParserTest, pickUpTargetNameSampleTargetFromArgument) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=sampleTarget", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=sampleTarget", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -226,7 +226,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpTargetNameSampleTargetFromArgument)
 
 TEST_F(CommandLineArgumentsParserTest, pickUpTargetNameTargetNameFromArgument) {
 	int argc(6);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--target=targetName", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--target=targetName", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -235,7 +235,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpTargetNameTargetNameFromArgument) {
 
 TEST_F(CommandLineArgumentsParserTest, pickUpDefaultTargetName) {
 	int argc(5);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--lang=c", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -244,7 +244,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpDefaultTargetName) {
 
 TEST_F(CommandLineArgumentsParserTest, pickUpDefaultLanguageSettings) {
 	int argc(4);
-	char* argv[] = {(char*)"prepareFiles", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	sut->parseArguments(argc, argv);
 
@@ -253,7 +253,7 @@ TEST_F(CommandLineArgumentsParserTest, pickUpDefaultLanguageSettings) {
 
 TEST_F(CommandLineArgumentsParserTest, ItIsNecessaryToCreateWhenNoCommandLineOption) {
 	int argc(4);
-	char* argv[] = {(char*)"prepareFiles", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	try{
 		sut->parseArguments(argc, argv);
@@ -268,11 +268,41 @@ TEST_F(CommandLineArgumentsParserTest, ItIsNecessaryToCreateWhenNoCommandLineOpt
 
 TEST_F(CommandLineArgumentsParserTest, ItIsNOTNecessaryToCreateWhenCommandLineOptionIsThere) {
 	int argc(5);
-	char* argv[] = {(char*)"prepareFiles", (char*)"--without_Makefile", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
+	char* argv[] = {(char*)"classMaker", (char*)"--without_Makefile", (char*)"Hoge", (char*)"Fuga", (char*)"Foo"};
 
 	try{
 		sut->parseArguments(argc, argv);
 		EXPECT_FALSE(sut->isNecessaryToCreateMakefile());
+	}
+	catch(std::invalid_argument& e) {
+		std::string actual = e.what();
+		FAIL() << "We should NOT get here.";
+	}
+
+}
+
+TEST_F(CommandLineArgumentsParserTest, NoExceptionWithTemplateFile) {
+	int argc(5);
+	char* argv[] = {(char*)"classMaker", (char*)"--with_template", (char*)"Hoge"};
+
+	try{
+		sut->parseArguments(argc, argv);
+		EXPECT_TRUE(sut->isUsingTemplate());
+	}
+	catch(std::invalid_argument& e) {
+		std::string actual = e.what();
+		FAIL() << "We should NOT get here.";
+	}
+
+}
+
+TEST_F(CommandLineArgumentsParserTest, NoExceptionWithTemplateFile_DonNotNeedTemplate) {
+	int argc(5);
+	char* argv[] = {(char*)"classMaker", (char*)"Hoge"};
+
+	try{
+		sut->parseArguments(argc, argv);
+		EXPECT_FALSE(sut->isUsingTemplate());
 	}
 	catch(std::invalid_argument& e) {
 		std::string actual = e.what();

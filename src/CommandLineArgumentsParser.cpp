@@ -7,7 +7,7 @@
 
 #include "CommandLineArgumentsParser.h"
 #include <iostream>
-CommandLineArgumentsParser::CommandLineArgumentsParser() : language_("cpp"), targetName_("a.out"), needToCreateMakefile_(true) {
+CommandLineArgumentsParser::CommandLineArgumentsParser() : language_("cpp"), targetName_("a.out"), needToCreateMakefile_(true), usingTemplate_(false) {
 }
 
 CommandLineArgumentsParser::~CommandLineArgumentsParser() {
@@ -54,6 +54,10 @@ const bool CommandLineArgumentsParser::isNecessaryToCreateMakefile() const {
 	return needToCreateMakefile_;
 }
 
+const bool CommandLineArgumentsParser::isUsingTemplate() const {
+	return usingTemplate_;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 bool CommandLineArgumentsParser::isArgumentEnough(int argc) {
 	return argc >= 2;
@@ -92,6 +96,7 @@ bool CommandLineArgumentsParser::isCorrectOption(std::string argument) {
 			|| isLanguageC(argument)
 			|| isTargetNameOption(argument)
 			|| isMakefileCreatingOption(argument)
+			|| isTemplateUse(argument)
 			|| isAppendOption(argument);
 }
 
@@ -112,6 +117,9 @@ void CommandLineArgumentsParser::parseOption(std::string argument) {
 	else if( isMakefileCreatingOption(argument) ) {
 		needToCreateMakefile_ = false;
 	}
+	else if( isTemplateUse(argument) ) {
+		usingTemplate_ = true;
+	}
 }
 
 bool CommandLineArgumentsParser::isLanguageCpp(std::string argument) {
@@ -130,3 +138,6 @@ bool CommandLineArgumentsParser::isAppendOption(std::string argument) {
 	return argument.compare("--append") == 0;
 }
 
+bool CommandLineArgumentsParser::isTemplateUse(std::string argument) {
+	return argument.compare("--with_template") == 0;
+}
