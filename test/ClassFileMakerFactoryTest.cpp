@@ -12,11 +12,6 @@
 #include "FileMakerList.h"
 
 ClassFileMakerFactoryTest::ClassFileMakerFactoryTest() : sut(NULL), mock(NULL) {
-	char* argv[] = {(char*)"command", (char*)"Hoge"};
-	int argc(2);
-	mock = 	new CommandLineArgumentsParserMock();
-	mock->parseArguments(argc, argv);
-	sut = new ClassFileMakerFactory(mock);
 }
 
 ClassFileMakerFactoryTest::~ClassFileMakerFactoryTest() {
@@ -24,25 +19,40 @@ ClassFileMakerFactoryTest::~ClassFileMakerFactoryTest() {
 	delete mock;
 }
 
+void ClassFileMakerFactoryTest::prepareSutForCppTest() {
+	char* argv[] = {(char*)"command", (char*)"Hoge"};
+	int argc(2);
+	mock = 	new CommandLineArgumentsParserMock();
+	mock->parseArguments(argc, argv);
+	sut = new ClassFileMakerFactory(mock);
+}
+
+void ClassFileMakerFactoryTest::prepareSutForCTest() {
+	char* argv[] = {(char*)"command", (char*)"--lang=c", (char*)"Hoge"};
+	mock = 	new CommandLineArgumentsParserMock();
+	mock->parseArguments(3, argv);
+	sut = new ClassFileMakerFactory(mock);
+}
+
+void ClassFileMakerFactoryTest::prepareSutForTemplateTest() {
+}
+
 TEST_F(ClassFileMakerFactoryTest, createClassFileMaker_cpp) {
+	prepareSutForCppTest();
 	FileMakerList list;
 	sut->buildClassList(&list);
 	EXPECT_EQ("Hoge.cpp ", list.getClassFileList());
 }
 
 TEST_F(ClassFileMakerFactoryTest, createTestClassFileMaker_cpp) {
+	prepareSutForCppTest();
 	FileMakerList list;
 	sut->buildClassList(&list);
 	EXPECT_EQ("../test/HogeTest.cpp ", list.getTestClassFileList());
 }
 
 TEST_F(ClassFileMakerFactoryTest, createClassFileMaker_c) {
-	delete mock;
-	delete sut;
-	char* argv[] = {(char*)"command", (char*)"--lang=c", (char*)"Hoge"};
-	mock = 	new CommandLineArgumentsParserMock();
-	mock->parseArguments(3, argv);
-	sut = new ClassFileMakerFactory(mock);
+	prepareSutForCTest();
 	FileMakerList list;
 	sut->buildClassList(&list);
 	EXPECT_EQ("Hoge.c ", list.getClassFileList());

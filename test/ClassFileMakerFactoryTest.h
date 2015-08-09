@@ -13,12 +13,17 @@
 #include "ClassFileMakerFactory.h"
 
 class ClassFileMakerFactoryTest: public ::testing::Test {
-protected:
-	ClassFileMakerFactory* sut;
-	CommandLineArgumentsParserMock* mock;
 public:
 	ClassFileMakerFactoryTest();
 	virtual ~ClassFileMakerFactoryTest();
+
+protected:
+	ClassFileMakerFactory* sut;
+	CommandLineArgumentsParserMock* mock;
+
+	void prepareSutForCppTest();
+	void prepareSutForCTest();
+	void prepareSutForTemplateTest();
 };
 
 #endif /* CLASSFILEMAKERFACTORYTEST_H_ */
