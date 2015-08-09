@@ -35,6 +35,10 @@ void ClassFileMakerFactoryTest::prepareSutForCTest() {
 }
 
 void ClassFileMakerFactoryTest::prepareSutForTemplateTest() {
+	char* argv[] = {(char*)"command", (char*)"--with_template", (char*)"Hoge"};
+	mock = 	new CommandLineArgumentsParserMock();
+	mock->parseArguments(3, argv);
+	sut = new ClassFileMakerFactory(mock);
 }
 
 TEST_F(ClassFileMakerFactoryTest, createClassFileMaker_cpp) {
@@ -56,4 +60,18 @@ TEST_F(ClassFileMakerFactoryTest, createClassFileMaker_c) {
 	FileMakerList list;
 	sut->buildClassList(&list);
 	EXPECT_EQ("Hoge.c ", list.getClassFileList());
+}
+
+TEST_F(ClassFileMakerFactoryTest, createClassFileMaker_Template) {
+	prepareSutForTemplateTest();
+	FileMakerList list;
+	sut->buildClassList(&list);
+	EXPECT_EQ("Hoge.cpp ", list.getClassFileList());
+}
+
+TEST_F(ClassFileMakerFactoryTest, createTestClassFileMaker_Template) {
+	prepareSutForTemplateTest();
+	FileMakerList list;
+	sut->buildClassList(&list);
+	EXPECT_EQ("../test/HogeTest.cpp ", list.getTestClassFileList());
 }

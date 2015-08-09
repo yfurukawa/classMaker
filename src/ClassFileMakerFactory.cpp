@@ -9,6 +9,7 @@
 #include "CommandLineArgumentsParser.h"
 #include "ClassFileMaker.h"
 #include "CFileMaker.h"
+#include "ClassFileMakerFromTemplate.h"
 #include "TestClassFileMaker.h"
 #include "TestClassFileMakerForC.h"
 #include "FileDAO.h"
@@ -26,7 +27,11 @@ ClassFileMakerFactory::ClassFileMakerFactory(CommandLineArgumentsParser* parser)
 void ClassFileMakerFactory::buildClassList(FileMakerList* list){
 	classes_ = parser_->getClassName();
 
-	if(parser_->getLanguage() == "cpp") {
+	if( parser_->isUsingTemplate() ) {
+		appendClassName< ClassFileMakerFromTemplate >( list );
+		appendTestClassName< TestClassFileMaker >( list );
+	}
+	else if( parser_->getLanguage() == "cpp" ) {
 		appendClassName< ClassFileMaker >( list );
 		appendTestClassName< TestClassFileMaker >( list );
 	}
