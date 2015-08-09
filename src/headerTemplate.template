@@ -1,0 +1,39 @@
+/**
+ * \file #{HEADER} <br>
+ * \bref TODO 概要を記述する
+ * \note TODO クラスの説明を記述する
+ *
+ */
+
+#ifndef #{INCLUDEGUARD}
+#define #{INCLUDEGUARD}
+
+class #{CLASS} {
+public:
+	//! デフォルトコンストラクタ
+	#{CLASS}();
+
+	 //! コンストラクタ
+	/*!
+	 * \param name モジュール名
+	 */
+	explicit #{CLASS}(std::string name);
+	
+	 //! デストラクタ
+	virtual ~#{CLASS}();
+	
+	//! TODO メソッドの説明を記述する
+	/*!
+	 * \param arg TODO 引数名を変更し、説明を記述する
+	 * \return ソースファイル名
+	 */
+	virtual const std::string hoge() const;
+
+protected:
+	const std::string name_; //!< TODO メンバ変数の説明を記述する
+
+private:
+
+};
+
+#endif /* #{INCLUDEGUARD} */

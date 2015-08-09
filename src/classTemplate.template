@@ -1,0 +1,12 @@
+/**
+ * \file #{CLASS}.cpp <br>
+ *
+ */
+
+#include "#{HEADER}"
+
+#{CLASS}::#{CLASS}() {
+}
+
+#{CLASS}::~#{CLASS}() {
+}
